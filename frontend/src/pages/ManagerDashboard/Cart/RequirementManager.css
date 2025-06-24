@@ -1,0 +1,221 @@
+.req-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+}
+
+.req-input{
+  width:50vw
+}
+
+.mstt {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  margin-top: 5rem;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #f4f6f8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+.req-entry {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f4f6f8;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.entry-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.entry-row input,
+.entry-row select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fdfdfd;
+  transition: border-color 0.2s;
+}
+
+/* Adjust flex basis for each input type */
+.entry-row input[readonly] {
+  flex: 1 1 120px;
+  background-color: #eee;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.entry-row .suggestion-wrapper {
+  flex: 2 1 300px;
+  position: relative;
+}
+
+.entry-row input[type="number"] {
+  flex: 1 1 150px;
+  min-width: 100px;
+}
+
+.entry-row input:focus,
+.entry-row select:focus {
+  border-color: #e6e6e6;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+}
+
+/* Search Suggestion Icon (optional if used) */
+.entry-row input[list] {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l4.25 4.25 1.49-1.49L15.5 14zM10 14a4 4 0 110-8 4 4 0 010 8z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px 18px;
+}
+
+.entry-row button,
+.req-entry button {
+  padding: 10px 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.entry-row button:hover,
+.req-entry button:hover {
+  background-color: #0056b3;
+}
+
+.req-cart,
+.req-section {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f4f6f8;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+.req-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.place-order {
+  background-color: #ffcc00;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  color: #333;
+  font-weight: 600;
+}
+
+.req-cart button.remove-btn {
+  background: none;
+  border: none;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 8px;
+  font-size: 1.1rem;
+}
+
+.req-cart button.remove-btn:hover {
+  text-decoration: underline;
+}
+
+.edit-banner {
+  padding: 10px;
+  background-color: #ffeeba;
+  border: 1px solid #ffdd57;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+/* Suggestion Box Styling */
+.suggestion-wrapper {
+  position: absolute;
+  /* flex: 2 1 300px; */
+}
+
+.suggestion-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.suggestion-list li:hover,
+.suggestion-list li.highlight {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive: stack inputs on small screens */
+@media (max-width: 600px) {
+  .entry-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .entry-row input,
+  .entry-row select {
+    width: 100%;
+  }
+
+  .entry-row .suggestion-wrapper {
+    width: 100%;
+  }
+}
+

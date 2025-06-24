@@ -1,0 +1,76 @@
+/* Base layout */
+.manager-dashboard {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content spacing */
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 100px 60px 40px 60px;
+}
+
+/* Card container aligned to right */
+.actions-card {
+  background-color: #ffffff;
+  width: 300px;
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Title styling */
+.card-title {
+  font-size: 20px;
+  color: #002855;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Button layout inside the card */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Action Button Styling */
+.action-button-new {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: #1a004b; /* topbar color */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out, transform 0.1s ease;
+}
+
+.action-button-new:hover {
+  background-color: #310075; /* darker shade for hover */
+  transform: translateY(-1px);
+}
+
+/* Footer */
+.dashboard-footer,
+footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  color: #888;
+  background-color: #e9ecf1;
+  margin-top: auto;
+}
+
+.mst11{
+  margin: 10rem;
+}

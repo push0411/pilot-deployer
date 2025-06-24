@@ -1,0 +1,350 @@
+/* Form.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+}
+
+.project-form {
+  max-width: 80vw;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.project-form {
+  max-height: 80vh;       /* give it vertical limit */
+  overflow-y: auto;       /* enables internal scrolling */
+  padding: 2rem;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: rem;
+
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: auto;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #1976d2;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin: 1rem 0.5rem 0 0;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Custom button alignment */
+.button-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ack-nowledge-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Step-specific class for instruction area */
+.instruction-card {
+  background-color: #eef3fb;
+  border: 1px solid #bbd1f7;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+h13, h14 {
+  margin-bottom: 0.8rem;
+  color: #2e3b55;
+}
+
+ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* Component search and table */
+.search-bar-with-dropdown {
+  margin-top: 1rem;
+}
+
+.search-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.test1 {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.dropdown-toggle {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-table {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-top: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.search-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.search-table th,
+.search-table td {
+  padding: 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  word-wrap: break-word;
+}
+
+.search-table th {
+  background-color: #f0f0f0;
+}
+
+/* General tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  padding: 0.6rem;
+  text-align: left;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  word-break: break-word;
+}
+
+/* Final step acknowledgment */
+.ack {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .project-form {
+    padding: 1rem;
+  }
+
+  .search-bar-row,
+  .ack-nowledge-line,
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  button {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  position: relative;
+  max-width: 100%;
+  padding: 0 10px;
+  flex-wrap: wrap;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  flex: 1;
+  min-width: 100px;
+}
+
+.step-circle {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.step-label {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #ccc,
+    #ccc 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  margin-left: 15px;
+  margin-right: 15px;
+  z-index: 0;
+}
+
+.step-item.active .step-circle {
+  background-color: #4b0082; /* Indigo */
+}
+
+.step-item.completed .step-circle {
+  background-color: #28a745; /* Green */
+}
+
+/* Request Component Section Styles */
+.component-request-form {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.component-request-form h4 {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+.component-request-form input[type="text"],
+.component-request-form input[type="number"],
+.component-request-form input[type="file"],
+.component-request-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.component-request-form input:focus,
+.component-request-form textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.component-request-form button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.component-request-form button:hover {
+  background-color: #2563eb;
+}
+
+.component-request-form img {
+  margin-top: 10px;
+  max-width: 160px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+}
+
+.missing-component-request {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.missing-component-request span {
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}

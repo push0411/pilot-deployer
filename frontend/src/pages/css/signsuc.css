@@ -1,0 +1,50 @@
+.login-failed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .login-failed-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+  }
+  
+  .login-failed-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .login-failed-box h1 {
+    color: #07a61a;
+    font-size: 28px;
+  }
+  
+  .login-failed-box p {
+    font-size: 16px;
+    color: #555;
+    margin: 20px 0;
+  }
+  
+  .login-failed-box button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-failed-box button:hover {
+    background-color: #0056b3;
+  }
+  

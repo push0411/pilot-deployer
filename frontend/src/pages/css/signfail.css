@@ -1,0 +1,73 @@
+.login-failed-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .login-failed-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+  }
+  
+  .login-failed-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .login-failed-box h1 {
+    color: #d9534f;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .login-failed-box p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .button-group button {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    min-width: 120px;
+  }
+  
+  .login-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .signup-btn {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .signup-btn:hover {
+    background-color: #5a6268;
+  }
+  

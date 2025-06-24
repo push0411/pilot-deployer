@@ -1,0 +1,68 @@
+.my-teams-container {
+  padding: 20px;
+  margin-top: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.my-teams-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.teams-table-wrapper {
+  overflow-x: auto;
+}
+
+.teams-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.teams-table th,
+.teams-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.teams-table th {
+  background-color: #f4f6f8;
+  font-weight: 600;
+  color: #222;
+}
+
+.teams-table td ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.teams-table td ul li {
+  list-style-type: disc;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .teams-table th,
+  .teams-table td {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .teams-table th,
+  .teams-table td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .my-teams-container h2 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,81 @@
+/* Topbar.css */
+
+.topbar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: #1a004b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* margin-bottom: 10rem; */
+}
+
+.title1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.user-info1 {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown1 {
+  position: relative;
+  cursor: pointer;
+}
+
+.pnm1 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 120%;
+  background-color: white;
+  color: black;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  z-index: 999;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.dropdown1:hover .dropdown-content1 {
+  display: flex;
+}
+
+.dropdown-content1 button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  text-align: left;
+  width: 100%;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #2e0d6e;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-content1 button:hover {
+  background-color: #f0f0f0;
+}
+
+.icon1 {
+  font-size: 1.1rem;
+}

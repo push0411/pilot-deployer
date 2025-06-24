@@ -1,0 +1,107 @@
+/* CheckIn.css */
+
+.checkin-container {
+  position: fixed;
+  top: 60px; /* Adjust if TopbarWithLogo exists */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background-color: #f4f6f8;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1;
+}
+
+.checkin-container h2 {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-size: 22px;
+  color: #222;
+}
+
+/* Table container styling */
+.checkin-table {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* Table headers */
+.checkin-table thead {
+  background-color: #f2f4f7;
+}
+
+.checkin-table th,
+.checkin-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  color: #333;
+}
+
+.checkin-table th {
+  font-weight: 600;
+}
+
+/* Inputs inside table */
+.checkin-table input[type="number"],
+.checkin-table input[type="text"] {
+  padding: 6px 10px;
+  width: 100%;
+  max-width: 110px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.checkin-table input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+/* Disabled inputs */
+.checkin-table input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Submit button */
+.checkin-submit-btn {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.checkin-submit-btn:hover {
+  background-color: #218838;
+}
+
+/* Optional: scrollbar styling */
+.checkin-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.checkin-container::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 10px;
+}

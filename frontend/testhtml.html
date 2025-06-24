@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Card</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      padding: 20px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      color: #2c3e50;
+    }
+
+    .card p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #444;
+    }
+
+    .link-text {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .link-text:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #888;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>SmartHelmate</h2>
+    <p><span class="label">Project ID:</span> PRJ162420</p>
+    <p><span class="label">Description:</span> Arduino</p>
+    <p><span class="label">Components:</span>
+      <a class="link-text" href="components.html" target="_blank">View Component Table</a>
+    </p>
+    <p><span class="label">Team:</span> None</p>
+    <p><span class="label">Project Guide:</span> GUIDE101 - Prof. Ramesh Patil</p>
+    <div class="footer">Created: 2025-05-25</div>
+  </div>
+
+</body>
+</html>

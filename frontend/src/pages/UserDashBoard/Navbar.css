@@ -1,0 +1,141 @@
+/* Navbar.css */
+
+.navbar-container {
+  position: relative;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000;
+}
+
+/* Topbar Styles */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  color: white;
+  padding: 0.75rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  position: relative;
+  height: 60px;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-title {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 1.2rem;
+  color: white;
+}
+
+/* User Area */
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.username {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown button {
+  all: unset;
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.95rem;
+  background-color: white;
+  color: #1e293b;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown button:hover {
+  background-color: #f3f4f6;
+}
+
+/* Sidebar floating over */
+.sidebar {
+  position: fixed;
+  top: 60px; /* height of topbar */
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 60px);
+  background-color: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 0.75rem 1.25rem;
+  color: #1e293b;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar li:hover {
+  background-color: #e2e8f0;
+}
+
+/* Overlay to darken background when sidebar is open */
+.sidebar-overlay {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+  display: none;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .nav-title {
+    font-size: 1rem;
+  }
+
+  .username {
+    display: none;
+  }
+}

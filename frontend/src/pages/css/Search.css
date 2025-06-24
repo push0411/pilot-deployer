@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  .page-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-bar input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  
+  .search-icon {
+    color: #555;
+    font-size: 20px;
+  }
+  

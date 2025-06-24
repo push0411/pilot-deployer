@@ -1,0 +1,170 @@
+.project-dashboard1 {
+
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+.mst1{
+  margin: 5rem;
+}
+
+.project-dashboard1 h2 {
+
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.project-table1 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.project-table1 th,
+.project-table1 td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.project-table1 th {
+  background-color: #f5f5f5;
+}
+
+.view-btn1 {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-btn1:hover {
+  background-color: #0056b3;
+}
+
+/* Modal styles */
+.modal-overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content1 {
+  background: white;
+  padding: 20px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.modal-content1 h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.component-table1 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.component-table1 th,
+.component-table1 td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.component-table1 th {
+  background-color: #f0f0f0;
+}
+
+.modal-actions1 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.close-btn1,
+.accept-btn1,
+.reject-btn1,
+.confirm-reject-btn1 {
+  padding: 8px 16px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.close-btn1 {
+  background-color: #6c757d;
+}
+
+.close-btn1:hover {
+  background-color: #5a6268;
+}
+
+.accept-btn1 {
+  background-color: #28a745;
+}
+
+.accept-btn1:hover {
+  background-color: #218838;
+}
+
+.reject-btn1 {
+  background-color: #dc3545;
+}
+
+.reject-btn1:hover {
+  background-color: #c82333;
+}
+
+.remark-section1 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.remark-section1 textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+}
+.component-table1 th:first-child {
+  width: 40px;
+  text-align: center;
+}
+.controls1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.search-input1 {
+  width: 60%; /* Previously 60% */
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.filter-select1 {
+  width: 5%; /* Previously default/small */
+  padding: 0.5rem;
+  font-size: 1rem;
+}

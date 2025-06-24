@@ -1,0 +1,198 @@
+/* Base styles */
+.dashboard {
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Project & Component Tables */
+.project-table,
+.component-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-table th,
+.project-table td,
+.component-table th,
+.component-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.project-table th,
+.component-table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+.project-table tr:last-child td,
+.component-table tr:last-child td {
+  border-bottom: none;
+}
+
+.view-link {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Status badge styles */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.status-approved {
+  background-color: #28a745;
+}
+
+.status-pending {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.status-rejected {
+  background-color: #dc3545;
+}
+
+/* Pagination controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pagination-controls button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.pagination-controls button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.pagination-controls span {
+  font-weight: 500;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.close-btn {
+  margin-top: 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive table on small screens */
+@media (max-width: 768px) {
+  .project-table,
+  .component-table,
+  .project-table thead,
+  .component-table thead,
+  .project-table tbody,
+  .component-table tbody,
+  .project-table tr,
+  .component-table tr,
+  .project-table th,
+  .component-table th,
+  .project-table td,
+  .component-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .project-table thead,
+  .component-table thead {
+    display: none;
+  }
+
+  .project-table td,
+  .component-table td {
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .project-table td::before,
+  .component-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    white-space: nowrap;
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  .pagination-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .close-btn {
+    width: 100%;
+  }
+}

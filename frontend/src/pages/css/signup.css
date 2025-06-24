@@ -1,0 +1,139 @@
+.signup-container {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+  }
+  
+  .signup-header {
+    background-color: #002855;
+    color: #fff;
+    text-align: center;
+    padding: 30px 15px;
+  }
+  
+  .signup-logo {
+    width: 90px;
+    margin-bottom: 10px;
+  }
+  
+  .signup-header h1,
+  .signup-header h2,
+  .signup-header h3 {
+    margin: 5px 0;
+  }
+  
+  .signup-form {
+    background-color: #fff;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 40px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group.full-width {
+    grid-column: 1 / -1;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #004fa3;
+    box-shadow: 0 0 0 3px rgba(0, 80, 170, 0.1);
+    outline: none;
+  }
+  
+  .signup-button {
+    grid-column: 1 / -1;
+    padding: 14px;
+    background-color: #002855;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-button:hover {
+    background-color: #0146a6;
+  }
+  
+  .error-text {
+    grid-column: 1 / -1;
+    color: red;
+    font-size: 14px;
+    margin-bottom: -10px;
+  }
+  
+  .signup-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #002855;
+    color: #ccc;
+    font-size: 14px;
+    margin-top: auto;
+  }
+  
+  /* Responsive Layout */
+  @media screen and (max-width: 768px) {
+    .signup-form {
+      grid-template-columns: 1fr;
+      padding: 30px 20px;
+    }
+  
+    .signup-logo {
+      width: 70px;
+    }
+  
+    .signup-header h1 {
+      font-size: 22px;
+    }
+  
+    .signup-header h2,
+    .signup-header h3 {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .signup-form {
+      padding: 25px 15px;
+    }
+  
+    .signup-button {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .signup-footer {
+      font-size: 12px;
+    }
+  }
+  
+  

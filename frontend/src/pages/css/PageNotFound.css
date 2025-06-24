@@ -1,0 +1,21 @@
+.page-not-found {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f7f9;
+    color: #c0392b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+  
+  .page-not-found h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .page-not-found p {
+    font-size: 18px;
+  }
+  

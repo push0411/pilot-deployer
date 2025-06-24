@@ -1,0 +1,84 @@
+/* Ensure full height layout for proper positioning */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container holding header, notification, and footer */
+.notification-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+}
+
+/* Middle content area to center notification-box */
+.notification-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Notification box styling */
+.notification-box {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Icon styling */
+.icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+/* Success icon color */
+.success .icon {
+  color: #28a745;
+}
+
+/* Failure icon color */
+.failure .icon {
+  color: #dc3545;
+}
+
+/* Title styling */
+.notification-box h2 {
+  margin: 10px 0;
+  color: #333333;
+}
+
+/* General paragraph text */
+.notification-box p {
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+/* Error message text */
+.error-message {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/* Button styles */
+.notification-box button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.notification-box button:hover {
+  background-color: #0056b3;
+}

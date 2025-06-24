@@ -1,0 +1,294 @@
+/* CreateProject.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7f9;
+    color: #333;
+  }
+  
+  .create-project-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 70vw;
+  }
+  
+  .create-project-header {
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #002855;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .create-project-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .create-project-header h1, 
+  .create-project-header h2, 
+  .create-project-header h3 {
+    margin: 0;
+  }
+  
+  .create-project-form {
+    background-color: #fff;
+    /* max-width: 700px; */
+    margin: 40px auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  .form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #002855;
+    outline: none;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .create-project-form ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .create-project-form ul li {
+    margin: 5px 0;
+  }
+  
+  .signup-button {
+    width: 100%;
+    background-color: #002855;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .signup-button:hover {
+    background-color: #0146a6;
+  }
+  
+  .error-text {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+  }
+  .id-warning {
+    color: #b60000;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    font-style: italic;
+    border-radius: 4px;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .cancel-button {
+    background-color: #fb6060;
+    border: 1px solid #bbb;
+    padding: 10px 16px;
+    border-radius: 6px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ddd;
+  }  
+  .create-project-footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 15px 10px;
+    background-color: #002855;
+    color: #ccc;
+    font-size: 14px;
+  }
+  .id-warning {
+    font-size: 0.85rem;font-weight: 500;
+    color: #777;
+    margin-top: 5px;
+  }
+  
+  
+
+  .input-error {
+    color: #b60000;
+    background-color: #f08888;
+    border-left: 4px solid red;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    font-style: italic;
+    border-radius: 4px;
+  }
+  .input-error {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #000000;
+    margin-top: 5px;
+  }
+  
+  
+
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .cancel-button {
+    padding: 8px 16px;
+    background-color: #eee;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ccc;
+  }
+  
+  /* Side form for creating a new component */
+  .side-form {
+    position: fixed;
+    top: 20%;
+    right: 10%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 1000;
+  }
+  
+  .side-form h3 {
+    margin-top: 0;
+  }
+  
+  .side-form input {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .side-form button {
+    padding: 10px;
+    background-color: #002855;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+  
+  .side-form button:hover {
+    background-color: #0146a6;
+  }
+  
+  .side-form button + button {
+    background-color: #f44336;
+    margin-top: 10px;
+  }
+  
+  .side-form button + button:hover {
+    background-color: #e53935;
+  }
+  
+  /* Responsive Layout */
+  @media screen and (max-width: 768px) {
+    .create-project-form {
+      width: 90%;
+      padding: 30px 20px;
+      margin: 30px auto;
+    }
+  
+    .create-project-header h1 {
+      font-size: 22px;
+    }
+  
+    .create-project-header h2 {
+      font-size: 18px;
+    }
+  
+    .create-project-header h3 {
+      font-size: 16px;
+    }
+  
+    .create-project-logo {
+      width: 70px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .create-project-header h1 {
+      font-size: 20px;
+    }
+  
+    .create-project-header h2 {
+      font-size: 16px;
+    }
+  
+    .create-project-header h3 {
+      font-size: 14px;
+    }
+  
+    .signup-button {
+      padding: 12px;
+      font-size: 15px;
+    }
+  
+    .create-project-form {
+      border-radius: 12px;
+      padding: 25px 15px;
+    }
+  
+    .create-project-footer {
+      font-size: 13px;
+      padding: 15px 5px;
+    }
+  }
+  

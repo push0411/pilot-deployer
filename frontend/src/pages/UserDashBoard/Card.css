@@ -1,0 +1,237 @@
+body {
+  background: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  
+  margin: 10px auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* box-sizing: border-box; */
+  /* will-change: transform; */
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.card p {
+  margin: 5px 0;
+  color: #555;
+  line-height: 1.4;
+}
+
+.label {
+  font-weight: bold;
+  color: #444;
+}
+
+.link-text {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link-text:hover {
+  text-decoration: underline;
+}
+
+.fter {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #888;
+  text-align: right;
+}
+
+.component-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.component-table th,
+.component-table td {
+  border: 1px solid #ccc;
+  text-align: left;
+  min-width: 8rem;
+  padding: 8px 12px;
+}
+
+.component-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+/* ===== Status Tracker ===== */
+.status-tracker {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.status-step {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ccc;
+  z-index: 1;
+}
+
+.status-label {
+  margin-left: 8px;
+  margin-right: 20px;
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.status-line {
+  width: 40px;
+  height: 2px;
+  background-color: #ccc;
+  position: absolute;
+  top: 6px;
+  left: 20px;
+  z-index: 0;
+}
+
+.status-step.completed .status-dot {
+  background-color: #27ae60;
+}
+
+.status-step.completed + .status-step .status-line {
+  background-color: #27ae60;
+}
+
+/* ===== Animation for Active Status ===== */
+.status-step.active .status-dot {
+  background-color: #2afc00;
+  animation: blinkFade 2s infinite;
+}
+
+@keyframes blinkFade {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* ===== Buttons ===== */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.approve-btn,
+.deny-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.approve-btn {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.approve-btn:hover {
+  background-color: #27ae60;
+}
+
+.deny-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.deny-btn:hover {
+  background-color: #c0392b;
+}
+.status-tracker {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.status-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+  width: 70px; /* Smaller width */
+  margin-right: 10px;
+  text-align: center;
+}
+
+.status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ccc;
+  z-index: 1;
+}
+
+.status-label {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #444;
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.2;
+  max-width: 100%;
+}
+
+.status-line {
+  width: 40px;
+  height: 2px;
+  background-color: #ccc;
+  position: absolute;
+  top: 6px;
+  left: 100%;
+  z-index: 0;
+}
+
+.status-step.completed .status-dot {
+  background-color: #27ae60;
+}
+
+.status-step.completed + .status-step .status-line {
+  background-color: #27ae60;
+}
+
+/* Blinking/fading animation for current */
+.status-step.active .status-dot {
+  background-color: #ff9800;
+  animation: blinkFade 1s infinite;
+}
+
+@keyframes blinkFade {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}

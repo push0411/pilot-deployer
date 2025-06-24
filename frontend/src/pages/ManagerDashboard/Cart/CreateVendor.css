@@ -1,0 +1,18 @@
+.create-vendor-container {
+  margin-top: 2rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background: #f9f9f9;
+}
+
+.create-vendor-container form input {
+  display: block;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.create-vendor-container form button {
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}

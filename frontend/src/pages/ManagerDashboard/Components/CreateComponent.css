@@ -1,0 +1,139 @@
+.create-component-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.create-component-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.cid-label {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: #666;
+}
+
+.create-component-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.dropzone {
+  border: 2px dashed #aaa;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #555;
+  transition: background 0.2s ease;
+}
+
+.dropzone:hover {
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.image-preview {
+  margin-top: 12px;
+}
+
+.image-preview img {
+  max-height: 150px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.remove-img-link {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #e74c3c;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.success-msg,
+.error-msg {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.success-msg {
+  color: #2ecc71;
+}
+
+.error-msg {
+  color: #e74c3c;
+}
+
+.submit-btn {
+  grid-column: 1 / -1;
+  background-color: #2980b9;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1f5f8b;
+}
+
+/* Responsive layout: stack columns on small screens */
+@media (max-width: 768px) {
+  .create-component-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mastt{
+  margin-top: 5rem;
+}
+
+.p{
+  font-size: 20px;
+}

@@ -1,0 +1,101 @@
+/* Container for the top bar */
+.topbar1 {
+  background-color: #140434;
+  color: white;
+  padding: 25px 30px;
+  display: flex;
+  height: 3vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Title in the center */
+.spacer1 {
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* User info area on the right */
+.user-info1 {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 200px;
+}
+
+/* Username display */
+.pnm1 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* Dropdown container */
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content initially hidden */
+.dropdown-content1 {
+  position: absolute;
+  right: 0;
+  background-color: #140434;
+  width: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  z-index: 1;
+  flex-direction: column;
+  padding: 4px 0;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+}
+
+
+/* Show dropdown on hover */
+.dropdown1:hover .dropdown-content1 {
+  display: flex;
+}
+
+/* Each button in the dropdown */
+.dropdown-content1 button {
+  background-color: transparent;
+  color: white;
+  padding: 8px 12px; /* Compact padding */
+  border: none;
+  text-align: left;
+  width: 100%;
+  font-size: 13px; /* Slightly smaller font */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Hover effect for dropdown buttons */
+.dropdown-content1 button:hover {
+  background-color: #2e0d6e;
+  border-radius: 6px;
+}
+
+/* Icon style */
+.icon1 {
+  font-size: 20px; /* Slightly reduced icon size */
+  min-width: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

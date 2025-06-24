@@ -1,0 +1,28 @@
+.token-missing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8d7da; /* light red background */
+}
+
+.token-missing-box {
+  background-color: white;
+  border: 2px solid #f5c2c7; /* red border */
+  border-radius: 10px;
+  padding: 40px 60px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(245, 194, 199, 0.6);
+  max-width: 400px;
+}
+
+.token-missing-box h1 {
+  color: #842029; /* dark red */
+  margin-bottom: 20px;
+}
+
+.token-missing-box .message {
+  color: #6c1b22;
+  font-size: 18px;
+  margin-bottom: 30px;
+}

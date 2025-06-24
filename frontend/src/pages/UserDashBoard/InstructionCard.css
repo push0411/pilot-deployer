@@ -1,0 +1,48 @@
+.instruction-card {
+  background-color: #fefefe;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.instruction-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.instruction-icon {
+  color: #007acc;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.instruction-header h2 {
+  font-size: 22px;
+  color: #333;
+  margin: 0;
+}
+
+.instruction-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.instruction-list li {
+  margin-bottom: 12px;
+}
+
+.instruction-list a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+.instruction-list a:hover {
+  text-decoration: underline;
+}
