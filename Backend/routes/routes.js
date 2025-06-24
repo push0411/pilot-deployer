@@ -94,12 +94,11 @@ router.get('/orders/:orderID/invoice', async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
-router.get('/orders', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const orders = await Order.find({});
     res.status(200).json({
       success: true,
-      orders: orders
+      message:"Hello World !"
     });
   } catch (err) {
     console.error("Error fetching orders:", err);
