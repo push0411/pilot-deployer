@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 // Middleware
-const { auth, authorizeRole } = require('../middlewares');
+const { auth, authorizeRole, getUserEmail } = require('../middlewares');
 
 // Auth controllers
-const { login, signUp, verifyOTP, getCurrentUser, verifyToken } = require("../controllers/Auth");
+const { login, signUp, verifyOTP, getCurrentUser, verifyToken, sendOTP, sendInstructioMail, changePassword } = require("../controllers/Auth");
 
 // Project Controllers
 const { createProject, getAllProjects, getAllUsers, getUserProjects, updateProjectApproval, updateProjectComponents, projectReturn, getGuidedProjects } = require("../controllers/Project");
@@ -28,7 +28,9 @@ router.post("/verify", verifyOTP);
 router.get("/get-all-users",   getAllUsers);
 router.get("/me",auth,  getCurrentUser);
 router.get("/verify-token", verifyToken);
-
+router.post("/auth/sendotp", sendOTP);
+router.post("/auth/forgot-pass", getUserEmail, sendInstructioMail);
+router.post("/auth/reset-password", changePassword);
 // --- Component Routes ---
 router.post("/create-component", auth,  createComponent);
 router.post("/create-component/form", auth,  createComponentInForm);
@@ -94,11 +96,12 @@ router.get('/orders/:orderID/invoice', async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
-router.get('/', async (req, res) => {
+router.get('/orders', async (req, res) => {
   try {
+    const orders = await Order.find({});
     res.status(200).json({
       success: true,
-      message:"Hello World !"
+      orders: orders
     });
   } catch (err) {
     console.error("Error fetching orders:", err);

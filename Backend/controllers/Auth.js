@@ -5,6 +5,7 @@ const Profile = require('../models/Profile')
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Controls = require('../models/Controls');
+const mailSender = require('../utils/mailSender');
 
 // Three Functions are there in this file 
 //     1-> sendOTP() => to send the otp
@@ -21,7 +22,7 @@ exports.sendOTP = async (req, res) => {
         const checkUserPresent = await User.findOne({email});
         //if user exist then return response
         if(checkUserPresent)
-        {5
+        {
             return res.status(401).json({
                 success: false,
                 message: "User Already Exists !!"
@@ -29,14 +30,14 @@ exports.sendOTP = async (req, res) => {
         }
         //generate OTP
         var otp = otpGenerator.generate(6, {
-            upperCaseAlphabets: false,
+            upperCaseAlphabets: true,
             lowerCaseAlphabets: false,
             specialChars: false
         });
         console.log("OTP generated Successfully !!");
 
         //check uniquie OTP 
-        const result = await OTP.findOne({otp:otp});
+        let result = await OTP.findOne({otp:otp});
         
         while(result)
         {
@@ -69,20 +70,10 @@ exports.sendOTP = async (req, res) => {
 
 exports.signUp = async (req, res) => {
     try {
-        const {
-            firstName,
-            lastName,
-            email,
-            password,
-            cPassword,
-            accountType,
-            contactNumber,
-            userID,
-            batch,
-            passingYear,
-            academicYear,
-        } = req.body;
+        //fetch Data from req.body
+        const {firstName, lastName, email, password, cPassword, accountType, contactNumber, userID, batch, passingYear, academicYear, otp} = req.body;
 
+        //Validate Data
         // Always-required fields
         if (
             !firstName || !lastName || !email || !password || !cPassword ||
@@ -107,6 +98,22 @@ exports.signUp = async (req, res) => {
             return res.status(409).json({ success: false, message: "User ID already taken!" });
         }
 
+        //Fetch OTP & Validate OTP
+        const recentOTP = await OTP.find({email}).sort({createdAt:-1}).limit(1);
+        if(recentOTP.length == 0)
+        {
+            return res.status(400).json({
+                success:false,
+                message:"OTP Not found !"
+            });
+        }else if(otp !== recentOTP[0].otp){
+            console.log(recentOTP, " ", otp);
+            return res.status(400).json({
+                success:false,
+                message:"Invalid OTP"
+            });
+        }
+
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const profile = await Profile.create({
@@ -123,6 +130,7 @@ exports.signUp = async (req, res) => {
             userID: Number(userID),
             password: hashedPassword,
             accountType,
+            isVerified:true,
             contactNumber, // keep as string
             additionalDetail: profile._id,
             image: `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`,
@@ -208,39 +216,76 @@ exports.login = async (req, res) => {
     }
 };
 
-//changePassword 
+exports.sendInstructioMail = async (req, res) => {
+  try {
+    const { userID, email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email is required!',
+      });
+    }
+
+    // Create token valid for 2 minutes
+    const token = jwt.sign({ email, userID }, process.env.JWT_SECRET, { expiresIn: '2m' });
+
+    // Build frontend reset URL
+    const resetLink = `${process.env.FRONT_BASE}/auth/reset-password?token=${token}`;
+
+    const subject = 'Project Pilot - Password Reset Instructions';
+    const body = `
+      <p>Hello,</p>
+      <p>We received a request to reset your password. Click the link below to proceed:</p>
+      <a href="${resetLink}" target="_blank">${resetLink}</a>
+      <p><strong>Note: This link will expire in 2 minutes.</strong></p>
+      <p>If you didn’t request this, simply ignore the message.</p>
+      <br/>
+      <p>— Project Pilot Team</p>
+    `;
+
+    // Send the mail using your utility
+    await mailSender(email, subject, body);
+
+    res.status(200).json({
+      success: true,
+      message: 'Reset instructions sent to your email!',
+    });
+  } catch (error) {
+    console.error('sendInstructioMail error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Something went wrong while sending reset email.',
+    });
+  }
+};
+
 exports.changePassword = async (req, res) => {
     try {
-        const { email, oldPassword, newPassword } = req.body;
+        const { token, newPassword } = req.body;
 
-        // Validate input
-        if (!email || !oldPassword || !newPassword) {
-            return res.status(400).json({
-                success: false,
-                message: "Please fill all the details !!",
-            });
-        }
-
-        // Check if the user exists
-        const id = req.user._id
-        const user = await User.findOne({id});
-        if (!user) {
-            return res.status(400).json({
-                success: false,
-                message: "User not found !!",
-            });
-        }
-
-        // Validate old password
-        const isMatch = await bcrypt.compare(oldPassword, user.password);
-        if (!isMatch) {
+        // Validate token
+        let decoded;
+        try {
+            decoded = jwt.verify(token, process.env.JWT_SECRET);
+        } catch (err) {
+            console.error("Token verification failed:", err.message);
             return res.status(401).json({
                 success: false,
-                message: "Incorrect old password !!",
+                error: "Invalid or expired token",
             });
         }
 
-        // Hash the new password
+        // Find user using decoded token payload
+        const user = await User.findOne({ userID: decoded.userID });
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                error: "User not found",
+            });
+        }
+
+        // Hash new password
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(newPassword, salt);
 
@@ -256,10 +301,11 @@ exports.changePassword = async (req, res) => {
         console.error("Change Password Error:", error);
         return res.status(500).json({
             success: false,
-            message: "Something went wrong !!",
+            error: "Something went wrong !!",
         });
     }
 };
+
 
 
 exports.verifyOTP = async (req, res) => {

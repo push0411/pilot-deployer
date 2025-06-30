@@ -1,4 +1,3 @@
-
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
@@ -13,7 +12,7 @@ const mailSender = async (email, subject, body) => {
     });
 
     let info = await transporter.sendMail({
-      from: `"Component Slot Manager" <${process.env.MAIL_ID}>`,
+      from: `"Project Pilot" <${process.env.MAIL_ID}>`,
       to: email,
       subject: subject,
       html: body,
